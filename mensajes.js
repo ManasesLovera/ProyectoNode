@@ -8,3 +8,7 @@ const mostrarMenu = () => {
     console.log("  Seleccione una opcion")
     console.log("==========================")
 }
+
+module.exports = {
+    mostrarMenu
+}

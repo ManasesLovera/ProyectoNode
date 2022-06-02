@@ -1,9 +1,10 @@
 require('colors')
+const {mostrarMenu} = require('./mensajes.js')
 console.clear()
 
-const main = () => {
+function main(){
 
-    console.log("hola mundo desde node")
+    mostrarMenu()
 
 }
 

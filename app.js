@@ -1,10 +1,11 @@
 require('colors')
-const {mostrarMenu} = require('./mensajes.js')
+const {mostrarMenu,pausa} = require('./mensajes.js')
 console.clear()
 
 function main(){
 
     mostrarMenu()
+    pausa()
 
 }
 

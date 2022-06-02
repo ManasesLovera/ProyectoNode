@@ -21,21 +21,26 @@ const mostrarMenu = () => {
         output: process.stdout
     })
 
-    readline.question('Seleccione una opcion: ', option => {
+    readline.question('\nSeleccione una opcion: ', option => {
         console.log(`\nEl string que escribiste es: ${option}`)
         readline.close()
     })
 }
 
-function pause(){
+function pausa(){
     const readline = require('readline').createInterface({
         input: process.stdin,
         output: process.stdout
+    })
+
+    readline.question(`Presiona ${'enter'.green} para continuar`, opt =>{
+        readline.close()
     })
 
     readline.question(``)
 }
 
 module.exports = {
-    mostrarMenu
+    mostrarMenu,
+    pausa
 }

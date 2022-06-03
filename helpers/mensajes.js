@@ -1,3 +1,4 @@
+//ty
 const { Resolver } = require('dns/promises')
 
 require('colors')

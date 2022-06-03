@@ -1,7 +1,7 @@
 //ty
 require('colors')
 const {inquirerMenu,pausa} = require('./helpers/inquirer.js')
-//const {pausa} = require('./helpers/mensajes.js')
+
 console.clear()
 
 const main = async() =>{

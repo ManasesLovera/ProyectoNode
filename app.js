@@ -1,7 +1,8 @@
 //ty
 require('colors')
-const {addtask,showtasks} = require('./helpers/methods.js')
+const {addtask} = require('./helpers/methods.js')
 const {inquirerMenu,pause} = require('./helpers/inquirer.js')
+const {saveData} = require('./helpers/saveFile.js')
 const tasks = require('./models/tasks.js')
 
 console.clear()
@@ -40,6 +41,8 @@ const main = async() =>{
                 // salir
                 break
         }
+
+        saveData(tareas._list)
 
         if (opt !== '7') await pause()
 

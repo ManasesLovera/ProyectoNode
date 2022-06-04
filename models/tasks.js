@@ -1,9 +1,10 @@
 require('colors')
+const {readData} = require('../helpers/saveFile.js')
 
 class tasks{
     
     constructor(){
-        this._list = []
+        this._list = readData() !== null ? readData() : []
     }
 
     add(task){
@@ -14,9 +15,10 @@ class tasks{
         let msg = ''
         console.log('')
         for(let i in this._list){
-            msg =`${+i+1}: ${this._list[i].description} ${(this._list[i].completed)?'completado'.green:'pendiente'.red}`
+            msg =`${+i+1}:  ${this._list[i].description}  ${(this._list[i].completed)?'completado'.green:'pendiente'.red}`
             console.log(msg)
         }
+        console.log('')
     }
 
     remove(task){

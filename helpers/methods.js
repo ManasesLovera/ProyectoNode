@@ -19,12 +19,6 @@ const addtask = async(tasks) =>{
 
 }
 
-const showtasks = (tasks) =>{
-
-    console.log(tasks._listado)
-}
-
 module.exports = {
-    addtask,
-    showtasks
+    addtask
 }

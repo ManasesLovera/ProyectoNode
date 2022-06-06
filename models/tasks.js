@@ -1,5 +1,6 @@
 require('colors')
-const {readData} = require('../helpers/saveFile.js')
+const inquirer = require('inquirer')
+const {readData} = require('../helpers/handleData.js')
 
 class tasks{
     
@@ -21,9 +22,42 @@ class tasks{
         console.log('')
     }
 
-    remove(task){
-        let aux = this._list.find( t => { t.id == task.id})
-        this._list.filter(tas => { tas.id != aux.id })
+    showCompleted(){
+        console.log('\ntareas completadas:\n')
+        for(let task of this._list){
+            if(task.completed){
+                console.log(`${task.description.green}`)
+            }
+        }
+        console.log('')
+    }
+
+    showUnCompleted(){
+        console.log(`\ntareas NO completadas:\n`)
+        for(let task of this._list){
+            if(!task.completed){
+                console.log(`${task.description.red}`)
+            }
+        }
+        console.log('')
+    }
+
+    async remove(){
+        let auxList = []
+        for(let i in this._list){
+            auxList[i] = {value:i,name:this._list[i].description}
+        }
+        auxList[auxList.length] = {value: auxList.length, name:' '}
+        const {chosen} = await inquirer.prompt([
+            {
+                type:'list',
+                name:'chosen',
+                message:'Elija la tarea que desea eliminar:\n',
+                choices:auxList
+            }
+        ])
+        console.log('')
+        this._list.splice(chosen,1)
     }
 }
 

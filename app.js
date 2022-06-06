@@ -2,7 +2,7 @@
 require('colors')
 const {addtask} = require('./helpers/methods.js')
 const {inquirerMenu,pause} = require('./helpers/inquirer.js')
-const {saveData} = require('./helpers/saveFile.js')
+const {saveData} = require('./helpers/handleData.js')
 const tasks = require('./models/tasks.js')
 
 console.clear()
@@ -36,6 +36,7 @@ const main = async() =>{
                 break 
             case '6':
                 // borrar tarea
+                tareas.remove()
                 break 
             case '0':
                 // salir

@@ -26,17 +26,19 @@ const main = async() =>{
                 break
             case '3':
                 // mostrar tareas completadas
-                console.log()
+                await tareas.showCompleted()
                 break 
             case '4':
                 // mostrar tareas pendientes
+                await tareas.showUnCompleted()
                 break 
             case '5':
                 // completar tarea(s)
+                await tareas.complete()
                 break 
             case '6':
                 // borrar tarea
-                tareas.remove()
+                await tareas.remove()
                 break 
             case '0':
                 // salir

@@ -48,16 +48,16 @@ class tasks{
             auxList[i] = {value:i,name:this._list[i].description}
         }
         auxList[auxList.length] = {value: auxList.length, name:' '}
-        const {chosen} = await inquirer.prompt([
+        const {index} = await inquirer.prompt([
             {
                 type:'list',
-                name:'chosen',
+                name:'index',
                 message:'Elija la tarea que desea eliminar:\n',
                 choices:auxList
             }
         ])
         console.log('')
-        this._list.splice(chosen,1)
+        this._list.splice(index,1)
     }
 }
 

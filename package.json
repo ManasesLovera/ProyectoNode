@@ -1,13 +1,13 @@
 {
   "name": "proyectonode",
   "version": "1.0.0",
-  "description": "",
+  "description": "App de consola que administra tareas",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["App de consola que administra tareas","App de consola hecha en node","node app"],
+  "author": "Manases Lovera Martinez",
   "license": "ISC",
   "dependencies": {
     "colors": "^1.4.0",
